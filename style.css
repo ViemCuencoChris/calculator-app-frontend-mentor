@@ -89,6 +89,9 @@ body {
     position: absolute;
     content: "";
     border-radius: 50%;
+    left: 0.2rem;
+    top: 50%;
+    transform: translateY(-50%);
     height: 0.7rem;
     width: auto;
     aspect-ratio: 1;
@@ -96,23 +99,16 @@ body {
     transition: all 0.5s ease;
 }
 
-.first {
-    left: 0.2rem;
-    top: 50%;
-    transform: translateY(-50%);
+.circle:hover {
+    background-color: var(--keys-red-light);
 }
 
 .second {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    left: calc(50% - 0.35rem);
 }
 
 .third {
-    left: auto;
-    top: 50%;
-    right: 0.2rem;
-    transform: translateY(-50%);
+    left: calc(100% - 0.9rem);
 }
 
 .main-screen {
