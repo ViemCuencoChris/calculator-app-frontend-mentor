@@ -136,6 +136,10 @@ btn.forEach(key => {
     });
 });
 
+delBtn.addEventListener('click', () => {
+    screen.value = screen.value.slice(0, -1);
+});
+
 resBtn.addEventListener('click', () => {
     screen.value = "";
 });
