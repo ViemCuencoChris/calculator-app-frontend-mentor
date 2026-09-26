@@ -140,37 +140,6 @@ resBtn.addEventListener('click', () => {
     screen.value = "";
 });
 
-const md = ['x', '/'];
-const as = ['+', '-'];
 subBtn.addEventListener('click', () => {
-    md.forEach(op => {
-        let equation = [];
-        if(screen.value.includes(op)){
-            let nums = screen.value.split(op);
-            nums.map((value, index) => {
-                equation[index] = Number(value);
-            });
-            if(op === 'x'){
-                screen.value = equation[0] * equation[1];
-            }
-            else{
-                screen.value = equation[0] / equation[1];
-            }
-        }
-    });
-    as.forEach(op => {
-        let equation = [];
-        if(screen.value.includes(op)){
-            let nums = screen.value.split(op);
-            nums.map((value, index) => {
-                equation[index] = Number(value);
-            });
-            if(op === '+'){
-                screen.value = equation[0] + equation[1];
-            }
-            else{
-                screen.value = equation[0] - equation[1];
-            }
-        }
-    });
+    screen.value = eval(screen.value);
 });
