@@ -43,130 +43,88 @@ slider.addEventListener('click', () => {
     if(counter <= 1){
         if(counter == 0){
             circle.classList.add("second");
-            body.style.backgroundColor = theme2_bg_gray_200;
-            body.style.color = theme2_text_gray_900;
-            slider.style.backgroundColor = theme2_bg_gray_300;
-            screen.style.backgroundColor = theme2_bg_gray_100;
-            screen.style.color = theme2_text_gray_900;
-            keypad.style.backgroundColor = theme2_bg_gray_300;
-            btn.forEach((key) => {
-                key.style.color = theme2_text_gray_900;
+            body.style.setProperty("--bg-navy-850", theme2_bg_gray_200);
+            body.style.setProperty("--text-white", theme2_text_gray_900);
+            slider.style.setProperty("--bg-navy-900", theme2_bg_gray_300);
+            keypad.style.setProperty("--bg-navy-900", theme2_bg_gray_300);
+            screen.style.setProperty("--bg-navy-950", theme2_bg_gray_100);
+            screen.style.setProperty("--text-white", theme2_text_gray_900);
+            btn.forEach(key => {
+                key.style.setProperty("--text-white", text_white);
+                key.style.setProperty("--text-navy-750", theme2_text_gray_900);
             });
-            delBtn.style.backgroundColor = theme2_keys_blue_500;
-            delBtn.style.borderBottomColor = theme2_keys_blue_600;
-            resBtn.style.backgroundColor = theme2_keys_blue_500;
-            resBtn.style.borderBottomColor = theme2_keys_blue_600;
-            subBtn.style.backgroundColor = theme2_keys_orange_700;
-            subBtn.style.borderBottomColor = theme2_keys_orange_800;
-
-            delBtn.addEventListener('mouseenter', () => {
-                delBtn.style.backgroundColor = theme2_keys_blue_light;
-            });
-            delBtn.addEventListener('mouseleave', () => {
-                delBtn.style.backgroundColor = theme2_keys_blue_500;
-                delBtn.style.borderBottomColor = theme2_keys_blue_600;
-            });
-
-            resBtn.addEventListener('mouseenter', () => {
-                resBtn.style.backgroundColor = theme2_keys_blue_light;
-            });
-            resBtn.addEventListener('mouseleave', () => {
-                resBtn.style.backgroundColor = theme2_keys_blue_500;
-                resBtn.style.borderBottomColor = theme2_keys_blue_600;
-            });
-
-            subBtn.addEventListener('mouseenter', () => {
-                subBtn.style.backgroundColor = theme2_keys_orange_light;
-            });
-            subBtn.addEventListener('mouseleave', () => {
-                subBtn.style.backgroundColor = theme2_keys_orange_700;
-                subBtn.style.borderBottomColor = theme2_keys_orange_800;
-            });
+            delBtn.style.setProperty("--keys-navy-light", theme2_keys_blue_light);
+            delBtn.style.setProperty("--keys-navy-700", theme2_keys_blue_500);
+            delBtn.style.setProperty("--keys-navy-800", theme2_keys_blue_600);
+            delBtn.style.setProperty("--text-white", text_white);
+            resBtn.style.setProperty("--keys-navy-light", theme2_keys_blue_light);
+            resBtn.style.setProperty("--keys-navy-700", theme2_keys_blue_500);
+            resBtn.style.setProperty("--keys-navy-800", theme2_keys_blue_600);
+            resBtn.style.setProperty("--text-white", text_white);
+            subBtn.style.setProperty("--keys-red-light", theme2_keys_orange_light);
+            subBtn.style.setProperty("--keys-red-600", theme2_keys_orange_700);
+            subBtn.style.setProperty("--keys-red-800", theme2_keys_orange_800);
+            subBtn.style.setProperty("--text-white", text_white);
             counter++;
         } else {
             circle.classList.remove("second");
             circle.classList.add("third");
-            body.style.backgroundColor = theme3_bg_purple_950;
-            body.style.color = theme3_text_yellow_300;
-            slider.style.backgroundColor = theme3_bg_purple_900;
-            circle.style.backgroundColor = theme3_keys_cyan_400;
-            
-            circle.addEventListener('mouseenter', () => {
-                circle.style.backgroundColor = theme3_keys_cyan_light;
-            })
-            circle.addEventListener('mouseleave', () => {
-                circle.style.backgroundColor = theme3_keys_cyan_400;
-            })
-            
-            screen.style.backgroundColor = theme3_bg_purple_900;
-            screen.style.color = theme3_text_yellow_300;
-            keypad.style.backgroundColor = theme3_bg_purple_900;
-            btn.forEach((key) => {
-                key.style.color = theme3_text_yellow_300;
-                key.style.backgroundColor = theme3_keys_purple_850;
-                key.style.borderBottomColor = theme3_keys_purple_750;
-                key.addEventListener('mouseenter', () => {
-                    key.style.backgroundColor = theme3_keys_purple_2light;
-                });
-                key.addEventListener('mouseleave', () => {
-                    key.style.backgroundColor = theme3_keys_purple_850;
-                    key.style.borderBottomColor = theme3_keys_purple_750;
-                });
+            body.style.setProperty("--bg-navy-850", theme3_bg_purple_950);
+            body.style.setProperty("--text-white", theme3_text_yellow_300);
+            circle.style.setProperty("--keys-red-light", theme3_keys_cyan_light);
+            circle.style.setProperty("--keys-red-600", theme3_keys_cyan_500);
+            slider.style.setProperty("--bg-navy-900", theme3_bg_purple_900);
+            keypad.style.setProperty("--bg-navy-900", theme3_bg_purple_900);
+            screen.style.setProperty("--bg-navy-950", theme3_bg_purple_900);
+            screen.style.setProperty("--text-white", theme3_text_yellow_300);
+            btn.forEach(key => {
+                key.style.setProperty("--keys-gray-200", theme3_keys_purple_850);
+                key.style.setProperty("--keys-gray-orange-400", theme3_keys_purple_750);
+                key.style.setProperty("--text-white", theme3_keys_purple_light);
+                key.style.setProperty("--text-navy-750", theme3_text_yellow_300);
             });
-            delBtn.style.backgroundColor = theme3_keys_purple_800;
-            delBtn.style.borderBottomColor = theme3_keys_purple_400;
-            resBtn.style.backgroundColor = theme3_keys_purple_800;
-            resBtn.style.borderBottomColor = theme3_keys_purple_400;
-            subBtn.style.backgroundColor = theme3_keys_cyan_500;
-            subBtn.style.borderBottomColor = theme3_keys_cyan_400;
-            subBtn.style.color = theme3_text_blue_950;
-
-            delBtn.addEventListener('mouseenter', () => {
-                delBtn.style.backgroundColor = theme3_keys_purple_light;
-            });
-            delBtn.addEventListener('mouseleave', () => {
-                delBtn.style.backgroundColor = theme3_keys_purple_800;
-                delBtn.style.borderBottomColor = theme3_keys_purple_400;
-            });
-
-            resBtn.addEventListener('mouseenter', () => {
-                resBtn.style.backgroundColor = theme3_keys_purple_light;
-            });
-            resBtn.addEventListener('mouseleave', () => {
-                resBtn.style.backgroundColor = theme3_keys_purple_800;
-                resBtn.style.borderBottomColor = theme3_keys_purple_400;
-            });
-
-            subBtn.addEventListener('mouseenter', () => {
-                subBtn.style.backgroundColor = theme3_keys_cyan_light;
-            });
-            subBtn.addEventListener('mouseleave', () => {
-                subBtn.style.backgroundColor = theme3_keys_cyan_500;
-                subBtn.style.borderBottomColor = theme3_keys_cyan_400;
-            });
+            delBtn.style.setProperty("--keys-navy-light", theme3_keys_purple_2light);
+            delBtn.style.setProperty("--keys-navy-700", theme3_keys_purple_800);
+            delBtn.style.setProperty("--keys-navy-800", theme3_keys_purple_400);
+            delBtn.style.setProperty("--text-white", text_white);
+            resBtn.style.setProperty("--keys-navy-light", theme3_keys_purple_2light);
+            resBtn.style.setProperty("--keys-navy-700", theme3_keys_purple_800);
+            resBtn.style.setProperty("--keys-navy-800", theme3_keys_purple_400);
+            resBtn.style.setProperty("--text-white", text_white);
+            subBtn.style.setProperty("--keys-red-light", theme3_keys_cyan_light);
+            subBtn.style.setProperty("--keys-red-600", theme3_keys_cyan_500);
+            subBtn.style.setProperty("--keys-red-800", theme3_keys_cyan_400);
+            subBtn.style.setProperty("--text-white", theme3_text_blue_950);
             counter++;
         }
     } else {
         circle.classList.remove("third");
-        body.style.backgroundColor = "";
-        body.style.color = "";
-        slider.style.backgroundColor = "";
-        circle.style.backgroundColor = "";
-        screen.style.backgroundColor = "";
-        screen.style.color = "";
-        keypad.style.backgroundColor = "";
-        btn.forEach((key) => {
-            key.style.color = "";
-            key.style.backgroundColor = "";
-            key.style.borderBottomColor = "";
+        body.style.setProperty("--bg-navy-850", "");
+        body.style.setProperty("--text-white", "");
+        circle.style.setProperty("--keys-red-light", "");
+        circle.style.setProperty("--keys-red-600", "");
+        slider.style.setProperty("--bg-navy-900", "");
+        keypad.style.setProperty("--bg-navy-900", "");
+        screen.style.setProperty("--bg-navy-950", "");
+        screen.style.setProperty("--text-white", "");
+        btn.forEach(key => {
+            key.style.setProperty("--keys-gray-200", "");
+            key.style.setProperty("--keys-gray-orange-400", "");
+            key.style.setProperty("--text-white", "");
+            key.style.setProperty("--text-navy-750", "");
         });
-        delBtn.style.backgroundColor = "";
-        delBtn.style.borderBottomColor = "";
-        resBtn.style.backgroundColor = "";
-        resBtn.style.borderBottomColor = "";
-        subBtn.style.backgroundColor = "";
-        subBtn.style.borderBottomColor = "";
-        subBtn.style.color = "";
+        delBtn.style.setProperty("--keys-navy-light", "");
+        delBtn.style.setProperty("--keys-navy-700", "");
+        delBtn.style.setProperty("--keys-navy-800", "");
+        delBtn.style.setProperty("--text-white", "");
+        resBtn.style.setProperty("--keys-navy-light", "");
+        resBtn.style.setProperty("--keys-navy-700", "");
+        resBtn.style.setProperty("--keys-navy-800", "");
+        resBtn.style.setProperty("--text-white", "");
+        subBtn.style.setProperty("--keys-red-light", "");
+        subBtn.style.setProperty("--keys-red-600", "");
+        subBtn.style.setProperty("--keys-red-800", "");
+        subBtn.style.setProperty("--text-white", "");
         counter = 0;
     }
 });
