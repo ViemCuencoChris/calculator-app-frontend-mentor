@@ -145,5 +145,16 @@ resBtn.addEventListener('click', () => {
 });
 
 subBtn.addEventListener('click', () => {
-    screen.value = eval(screen.value);
+    const tokens = screen.value.match(/\d+\.?\d*|\.\d+|[+\-x/]/g);
+    if (!tokens) return;
+    const terms = [Number(tokens[0])];
+    for(let i = 1; i < tokens.length; i+=2){
+        const operator = tokens[i];
+        const operand = Number(tokens[i+1]);
+        if (operator === "x") terms.push(terms.pop() * operand);
+        else if (operator === "/") terms.push(terms.pop() / operand);
+        else terms.push(operator === "-" ? terms.push(-operand) : operand);
+    }
+    const result = terms.reduce((sum, term) => sum + term, 0);
+    screen.value = Number.isFinite(result) ? String(Number(result.toFixed(10))) : "Error";
 });
