@@ -5,7 +5,6 @@ const circle = document.querySelector(".circle");
 const screen = document.querySelector(".main-screen");
 const keypad = document.querySelector(".main-keys");
 const btn = document.querySelectorAll(".btn");
-const operator = document.querySelectorAll(".op");
 const delBtn = document.getElementById("deleteBtn");
 const resBtn = document.getElementById("resetBtn");
 const subBtn = document.getElementById("submitBtn");
@@ -132,17 +131,14 @@ slider.addEventListener('click', () => {
 
 btn.forEach(key => {
     key.addEventListener('click', () => {
+
+        if(key === delBtn || key === resBtn || key === subBtn) return;
         screen.value += key.textContent;
     });
 });
 
-delBtn.addEventListener('click', () => {
-    screen.value = screen.value.slice(0, -1);
-});
-
-resBtn.addEventListener('click', () => {
-    screen.value = "";
-});
+delBtn.addEventListener('click', () => screen.value = screen.value.slice(0, -1) );
+resBtn.addEventListener('click', () => screen.value = "" );
 
 subBtn.addEventListener('click', () => {
     const tokens = screen.value.match(/\d+\.?\d*|\.\d+|[+\-x/]/g);
